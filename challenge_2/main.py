@@ -8,14 +8,6 @@ def generate_pine(n):
     symbols = "*" * i
 
     print(spaces + symbols + spaces)
-  
-  # Imprimir tronco del pino
-  for i in range(0, n - 2):
-    spaces_per_side = (bottom_length - 1)//2
-    spaces = " " * spaces_per_side
-    symbol = "|"
-
-    print(spaces + symbol + spaces)
 
 # Punto de entrada del programa
 if __name__ == '__main__':
