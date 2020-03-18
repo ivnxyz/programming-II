@@ -1,0 +1,1 @@
+void crear_pino(int height);
