@@ -1,13 +1,15 @@
 #include <stdio.h>
 
-struct entry {
-  int value; 
+struct entry
+{
+  int value;
   struct entry *next;
 };
 
 void insertEntry(struct entry *entry, struct entry *after);
 
-int main(void) {
+int main(void)
+{
   // Declarar entradas
   struct entry n1, n2, n3;
 
@@ -42,7 +44,8 @@ int main(void) {
   return 0;
 }
 
-void insertEntry(struct entry *entry, struct entry *after) {
+void insertEntry(struct entry *entry, struct entry *after)
+{
   entry->next = after->next;
   after->next = entry;
 }
