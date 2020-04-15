@@ -12,21 +12,27 @@ void ungetch(int c);
 int getint(int *intPointer);
 
 // Función principal
-int main() {
+int main()
+{
   // Declarar variables
   int SIZE = 5;
   int n, array[SIZE];
 
   // Pedir dígitos
-  for (n = 0; n < SIZE && getint(&array[n]) != EOF; n++);
-  
+  for (n = 0; n < SIZE && getint(&array[n]) != EOF; n++)
+    ;
+
   // Imprimir datos
   printf("\nResultado del arreglo: \n\n");
 
-  for (n = 0; n < SIZE; n++) {
-    if (n == 0) {
+  for (n = 0; n < SIZE; n++)
+  {
+    if (n == 0)
+    {
       printf("%d", array[n]);
-    } else {
+    }
+    else
+    {
       printf(" %d", array[n]);
     }
   }
@@ -37,27 +43,35 @@ int main() {
 }
 
 // Función getch
-int getch(void) {
+int getch(void)
+{
   return (bufp > 0) ? buf[--bufp] : getchar();
 }
 
 // Función ungetch
-void ungetch(int c) {
-  if (bufp >= BUFSIZE) {
+void ungetch(int c)
+{
+  if (bufp >= BUFSIZE)
+  {
     printf("ungetch: too many caracters\n");
-  } else {
+  }
+  else
+  {
     buf[bufp++] = c;
   }
 }
 
-int getint(int *intPointer) {
+int getint(int *intPointer)
+{
   int c, sign;
   char charSign;
 
   // Ignorar espacios en blanco
-  while (isspace(c = getch()));
+  while (isspace(c = getch()))
+    ;
 
-  if (!isdigit(c) && c != EOF && c != '+' && c != '-') {
+  if (!isdigit(c) && c != EOF && c != '+' && c != '-')
+  {
     ungetch(c); // No es un número
     return 0;
   }
@@ -67,24 +81,28 @@ int getint(int *intPointer) {
   charSign = (c == '-') ? '-' : '+';
 
   // Obtener el siguiente caracter
-  if (c == '+' || c == '-') {
+  if (c == '+' || c == '-')
+  {
     c = getch();
 
     // Veirificar que c es un número
-    if (!isdigit(c) && c != EOF) {
+    if (!isdigit(c) && c != EOF)
+    {
       ungetch(c);
       ungetch(charSign);
       return 0;
     }
   }
 
-  for (*intPointer = 0; isdigit(c); c = getch()) {
+  for (*intPointer = 0; isdigit(c); c = getch())
+  {
     *intPointer = 10 * *intPointer + (c - '0');
   }
 
   *intPointer *= sign;
 
-  if (c != EOF) {
+  if (c != EOF)
+  {
     ungetch(c);
   }
 
