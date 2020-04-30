@@ -51,11 +51,13 @@ int main(void) {
         // Abrir archivo
         filePointer = fopen("books.txt", "r");
 
-        // Imprimir libros
-        print_books(filePointer);
+        if (filePointer != NULL) {
+          // Imprimir libros
+          print_books(filePointer);
 
-        // Cerrar archivo
-        fclose(filePointer);
+          // Cerrar archivo
+          fclose(filePointer);
+        }
 
         break;
       case 's':

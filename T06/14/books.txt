@@ -1,2 +1,1 @@
-Cien Años de Soledad;Gabriel García Márquez;54.330002;
-El Laberinto de la Soledad;Oactavio Paz;12.310000;
+El laberinto de la soledad;Octavio paz;123.000000;
